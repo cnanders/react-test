@@ -13,7 +13,7 @@ class App extends Component {
   constructor()
   {
     super();
-    var n = 50000; // Number of elements to draw
+    var n = 500; // Number of elements to draw
     
     var squares = _.map(
       _.range(n), // [1 2 ... n] 

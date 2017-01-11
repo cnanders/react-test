@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -1246,4 +1245,4 @@ If you have ideas for more “How To” recipes that should be on this page, [le
 =======
 # react-test
 Demonstrate fast render with > N primary children in top-level node
->>>>>>> github/master
+

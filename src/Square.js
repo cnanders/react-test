@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import WhyDidYouUpdateMixin from './WhyDidYouUpdateMixin';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import ImmutablePropTypes from 'react-immutable-proptypes';
+
 /*
 class Square extends Component {
 
@@ -52,11 +54,11 @@ export default Square;
 // Eventually Facebook is dropping support but I want to use the Mixin
 const Square = React.createClass({
   propTypes: {
-    width: React.PropTypes.number,
+    //width: React.PropTypes.number,
     height: React.PropTypes.number,
-    index: React.PropTypes.number,
+    //index: React.PropTypes.number,
+		square: ImmutablePropTypes.map.isRequired,
     onClick: React.PropTypes.func,
-    selected: React.PropTypes.bool
   },
   mixins: [
     //WhyDidYouUpdateMixin,
@@ -64,20 +66,20 @@ const Square = React.createClass({
   ],
   onClick: function(){
 	  // Call out to parent, passing this id
-    console.log('Square.onClick(' + this.props.index + ')');
-	  this.props.onClick(this.props.index);
+		console.log('Square.onClick(' + this.props.square.get('id') + ')');
+		this.props.onClick(this.props.square.get('id'));
 	},
   render: function() {
 		var style = {
-			width: this.props.width,
+			width: this.props.square.get('width'),
 			height: this.props.height
 		};
-    var className = this.props.selected ? "selected" : "";
+		var className = this.props.square.get('selected') ? "selected" : "";
 
 		return (
-			<div style={style}
-           className={className}
-				  onClick={this.onClick}>
+			<div 	style={style}
+           	className={className}
+				  	onClick={this.onClick}>
 		  	&nbsp;
 			</div>
 		);
